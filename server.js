@@ -8,9 +8,9 @@ var methodOverride = require('method-override')
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
 
-var authorsController = require('./controllers/areas.js');
+var areasController = require('./controllers/areas.js');
 app.use('/areas', areasController);
-var articlesController = require('./controllers/attractions.js');
+var attractionsController = require('./controllers/attractions.js');
 app.use('/attractions', attractionsController);
 
 //==========================================================================
