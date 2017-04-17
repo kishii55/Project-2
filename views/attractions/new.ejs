@@ -20,13 +20,14 @@
 		</header>
 		<main>
 			<form action="/attractions" method="post">
+				Choose Affiliated Area
 				<select name="areaId">
                     <% for(var i = 0; i < areas.length; i++) { %>
                         <option value="<%=areas[i]._id%>"><%=areas[i].name%></option>
                     <% } %>
                 </select><br/>
-				<input type="text" name="title" /><br/>
-				<textarea name="body"></textarea><br/>
+				<input type="text" placeholder="Attraction Theme" name="theme" /><br/>
+				<textarea name="body" placeholder="Description of your magical experiences"></textarea><br/>
 				<input type="submit" value="Create Attraction"/>
 			</form>
 		</main>

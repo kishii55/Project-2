@@ -13,6 +13,9 @@ app.use('/areas', areasController);
 var attractionsController = require('./controllers/attractions.js');
 app.use('/attractions', attractionsController);
 
+var port = process.env.PORT || 3000;
+var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/map'
+
 //==========================================================================
 
 app.get('/', function(req, res){
@@ -21,12 +24,12 @@ app.get('/', function(req, res){
 
 
 //CONNECT TO SERVER AND MONGOOSE=============================================
-mongoose.connect('mongodb://localhost:27017/map');
+mongoose.connect(mongoDBURI);
 
 mongoose.connection.once('open', function(){
 	console.log('connected my young padawan');
 });
 
-app.listen(3000, function(){
-	console.log('the force is listening');
+app.listen(port, function(){
+	console.log('the force is listening' + port);
 });
