@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Article = require('../models/attractions.js');
-var Author = require('../models/areas.js')
+var Attraction = require('../models/attractions.js');
+var Area = require('../models/areas.js')
 
 //=========================================================================
 

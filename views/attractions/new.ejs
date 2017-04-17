@@ -21,7 +21,7 @@
 		<main>
 			<form action="/attractions" method="post">
 				<select name="areaId">
-                    <% for(var i = 0; i < authors.length; i++) { %>
+                    <% for(var i = 0; i < areas.length; i++) { %>
                         <option value="<%=areas[i]._id%>"><%=areas[i].name%></option>
                     <% } %>
                 </select><br/>
