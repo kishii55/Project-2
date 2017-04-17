@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>Edit <%=area.name%>'s Info</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/areas">Areas Index</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<h2>Area Attributes:</h2>
+			<form action="/areas/<%=area._id%>?_method=PUT" method="post">
+				<input type="text" name="name" value="<%=area.name%>"/><br/>
+				<input type="submit" value="Update Area"/>
+			</form>
+		</main>
+	</body>
+</html>

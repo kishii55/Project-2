@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>Create an Attraction</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/attractions">Attractions Index</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<form action="/attractions" method="post">
+				<select name="areaId">
+                    <% for(var i = 0; i < authors.length; i++) { %>
+                        <option value="<%=areas[i]._id%>"><%=areas[i].name%></option>
+                    <% } %>
+                </select><br/>
+				<input type="text" name="title" /><br/>
+				<textarea name="body"></textarea><br/>
+				<input type="submit" value="Create Attraction"/>
+			</form>
+		</main>
+	</body>
+</html>

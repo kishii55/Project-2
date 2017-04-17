@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>Attractions</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/attractions/new">Create a new Attraction</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<h2>List of Attractions</h2>
+			<ul>
+				<% for(var i = 0; i < attractions.length; i++){ %>
+					<li>
+						<a href="/attractions/<%=attractions[i]._id%>"><%=attractions[i].title%></a>
+					</li>
+				<% } %>
+			</ul>
+		</main>
+	</body>
+</html>
