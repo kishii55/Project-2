@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var attractionSchema = mongoose.Schema({
-	title:String,
-	body:String
+	theme:String,
+	description:String
 });
 
 var Attraction = mongoose.model('Attraction', attractionSchema);

@@ -24,7 +24,7 @@ router.get('/new', function(req, res){
 router.post('/', function(req, res){
     Area.findById(req.body.areaId, function(err, foundArea){
         Attraction.create(req.body, function(err, createdAttraction){
-            foundArea.attractions.push(createdAttraction);
+            foundArea.attraction.push(createdAttraction);
             foundArea.save(function(err, data){
                 res.redirect('/attractions');
             });

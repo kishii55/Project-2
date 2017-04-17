@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<header>
-			<h1><%=attraction.title%></h1>
+			<h1><%=attraction.theme%></h1>
 			<small>located in: <a href="/areas/<%=area._id%>"><%=area.name%></a></small>
 			<nav>
 				<ul>
@@ -21,7 +21,7 @@
 		</header>
 		<main>
 			<section>
-				<%=attraction.body%>
+				<%=attraction.description%>
 			</section>
 			<section>
 			    <form action="/attractions/<%=attraction._id%>?_method=DELETE" method="post">

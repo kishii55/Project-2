@@ -32,7 +32,7 @@ router.get('/:id', function(req, res){
 router.delete('/:id', function(req, res){
 	Area.findByIdAndRemove(req.params.id, function(err, foundArea){
 		var attractionIds = [];
-		for (var i = 0; i < foundArea.attractions.length; i++) {
+		for (var i = 0; i < foundArea.attraction.length; i++) {
 			attractionIds.push(foundArea.attractions[i]._id);
 		}
 		Attraction.remove(
