@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var Area = require('../models/areas.js');
 
 var attractionSchema = mongoose.Schema({
 	theme:String,
