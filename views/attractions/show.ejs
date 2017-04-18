@@ -6,8 +6,8 @@
 	</head>
 	<body>
 		<header>
-			<h1><%=attraction.theme%></h1>
-			<small>located in: <a href="/areas/<%=areas._id%>"><%=area.name%></a></small>
+			<h1><%=attraction.theme%></h1><%=area.name%><%=area.id%>
+			<small>located in: <a href="/areas/<%=area.id%>/edit><%=area.name%>"</a></small>
 			<nav>
 				<ul>
 					<li>

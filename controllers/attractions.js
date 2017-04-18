@@ -33,9 +33,11 @@ router.post('/', function(req, res){
     });
 });
 
-router.get('/:id', function(req, res){
+router.get('/show/:id', function(req, res){
+	console.log('im here');
     Attraction.findById(req.params.id, function(err, foundAttraction){
-        Area.findOne({'attractions._id':req.params.id}, function(err, foundArea){
+        Area.findOne({'attraction._id':req.params.id}, function(err, foundArea){
+			console.log(foundArea);
             res.render('attractions/show.ejs', {
                 area:foundArea,
                 attraction: foundAttraction
@@ -58,7 +60,8 @@ router.delete('/:id', function(req, res){
 router.get('/:id/edit', function(req, res){
 	Attraction.findById(req.params.id, function(err, foundAttraction){
 		Area.find({}, function(err, allAreas){
-			Area.findOne({'attractions._id':req.params.id}, function(err, foundAttractionArea){
+			console.log(allAreas);
+			Area.findOne({'attraction._id':req.params.id}, function(err, foundAttractionArea){
 				res.render('attractions/edit.ejs', {
 					attraction: foundAttraction,
 					areas: allAreas,

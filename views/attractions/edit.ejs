@@ -23,14 +23,9 @@
 			<form action="/attractions/<%=attraction._id%>?_method=PUT" method="post">
 				<select name="areaId">
                     <% for(var i = 0; i < areas.length; i++) { %>
-                        <option
-							value="<%=areas[i]._id%>"
-							<% if(areas[i]._id.toString() === areaAttraction._id.toString()){ %>
-								selected
-							<% } %>
-							>
-							<%=areas[i].name%>
-						</option>
+						<option><%=areas[i].id%></option>
+
+
                     <% } %>
                 </select><br/>
 				<input type="text" name="theme" value="<%=attraction.theme%>"/><br/>
