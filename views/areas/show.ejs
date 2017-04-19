@@ -20,7 +20,7 @@
 		</header>
 		<main>
 			<section>
-				<h2>Area Attributes:</h2>
+				<h2>Current Area</h2>
 				<ul>
 					<li>Name: <%=area.name%></li>
 				</ul>
@@ -28,8 +28,8 @@
 			<section>
 				<h2>Attractions Wihtin This Area</h2>
 				<ul>
-					<% for(var i = 0; i < area.attraction.length; i++){ %>
-						<li><a href="/attractions/<%=area.attraction[i]._id%>"><%=area.attraction[i].theme%></a></li>
+					<% for(var i = 0; i < area.attractions.length; i++){ %>
+						<li><a href="/attractions/<%=area.attractions[i]._id%>"><%=area.attractions[i].theme%></a></li>
 					<% } %>
 				</ul>
 			</section>

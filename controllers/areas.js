@@ -2,7 +2,11 @@ var express = require('express');
 var Area = require('../models/areas.js');
 var Attraction = require('../models/attractions.js');
 var router = express.Router();
+//========================================================================
 
+//INDEX ROUTE=============================================================
+
+//SHOW INDEX PAGE
 router.get('/', function(req, res){
 	Area.find({}, function(err, foundAreas){
 		res.render('areas/index.ejs', {
@@ -11,16 +15,18 @@ router.get('/', function(req, res){
 	})
 });
 
+//CREATE~NEW ROUTE=========================================================
+router.get('/new', function(req, res){
+	res.render('areas/new.ejs');
+});
+
 router.post('/', function(req, res){
 	Area.create(req.body, function(err, createdArea){
 		res.redirect('/areas');
 	});
 });
 
-router.get('/new', function(req, res){
-	res.render('areas/new.ejs');
-});
-
+//SHOW ROUTE==================================================================
 router.get('/:id', function(req, res){
 	Area.findById(req.params.id, function(err, foundArea){
 		res.render('areas/show.ejs', {
@@ -29,10 +35,11 @@ router.get('/:id', function(req, res){
 	});
 });
 
+//DELETE ROUTE================================================================
 router.delete('/:id', function(req, res){
 	Area.findByIdAndRemove(req.params.id, function(err, foundArea){
 		var attractionIds = [];
-		for (var i = 0; i < foundArea.attraction.length; i++) {
+		for (var i = 0; i < foundArea.attractions.length; i++) {
 			attractionIds.push(foundArea.attractions[i]._id);
 		}
 		Attraction.remove(
@@ -48,6 +55,7 @@ router.delete('/:id', function(req, res){
 	});
 });
 
+//EDIT~UPDATE ROUTE=======================================================
 router.get('/:id/edit', function(req, res){
 	Area.findById(req.params.id, function(err, foundArea){
 		res.render('areas/edit.ejs', {
@@ -62,4 +70,5 @@ router.put('/:id', function(req, res){
 	});
 });
 
+//=======================================================================
 module.exports = router;

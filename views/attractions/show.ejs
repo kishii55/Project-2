@@ -6,8 +6,8 @@
 	</head>
 	<body>
 		<header>
-			<h1><%=attraction.theme%></h1><%=area.name%><%=area.id%>
-			<small>located in: <a href="/areas/<%=area.id%>/edit><%=area.name%>"</a></small>
+			<h1><%=attraction.theme%></h1>
+			<small>Located in: <a href="/areas/<%=area._id%>"><%=area.name%></a></small>
 			<nav>
 				<ul>
 					<li>
@@ -24,7 +24,7 @@
 				<%=attraction.description%>
 			</section>
 			<section>
-			    <form action="/attractions/<%=attraction._id%>?_method=DELETE" method="post">
+			    <form action="/attractions/<%=attraction._id%>?_method=DELETE" method="POST">
 			        <input type="submit" value="Delete Attraction"/>
 			    </form>
 			</section>
