@@ -83,6 +83,7 @@ router.get('/:id/edit', function(req, res){
 router.put('/:id', function(req, res){
     Attraction.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, updatedAttraction){
         Area.findOne({ 'attractions._id' : req.params.id }, function(err, foundArea){
+			console.log(req.body);
             if(foundArea._id !== req.body.areaId){
                 foundArea.attractions.id(req.params.id).remove();
                 foundArea.save(function(err, savedFoundArea){

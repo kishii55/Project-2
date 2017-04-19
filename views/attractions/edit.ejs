@@ -23,7 +23,7 @@
 			<form action="/attractions/<%=attraction._id%>?_method=PUT" method="post">
 				<select name="areaId">
                     <% for(var i = 0; i < areas.length; i++) { %>
-						<option><%=areas[i].name%></option>
+						<option value="<%=areas[i]._id%>"><%=areas[i].name%></option>
                     <% } %>
                 </select><br/>
 				<input type="text" name="theme" value="<%=attraction.theme%>"/><br/>

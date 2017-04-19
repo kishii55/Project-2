@@ -14,7 +14,7 @@ router.post('/', function(req, res){
             req.session.currentuser = foundUser;
             res.redirect('/');
         } else {
-            res.send('wrong password');
+            res.send('Incorrect Password Please Try Again');
         }
     });
 });
