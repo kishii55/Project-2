@@ -6,7 +6,13 @@
 	</head>
 	<body>
 		<header>
-			<h1>WELCOME TO DISNEY LAND</h1>
+			<h1>
+    			<% if(currentUser) { %>
+        		Welcome <%=currentUser.username%> to Disneyland!
+    			<% } else { %>
+        		Welcome to Disneyland!
+    			<% } %>
+			</h1>
 			<nav>
 				<ul>
 					<li>
@@ -15,6 +21,15 @@
 					<li>
 						<a href="/attractions">attractions</a>
 					</li>
+					<li><a href="/sessions/new">Log In</a></li>
+					<li><a href="/users/new">Register</a></li>
+					<% if(currentUser) { %>
+    					<li>
+        					<form action="/sessions?_method=DELETE" method="POST">
+            					<input type="submit" value="Logout"/>
+        					</form>
+    					</li>
+					<% } %>
 				</ul>
 			</nav>
 		</header>

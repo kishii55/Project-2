@@ -62,7 +62,47 @@ router.delete('/:id', function(req, res){
     });
 });
 
-//EDIT~UPDATE ROUTE
+//EDIT~UPDATE ROUTE===========================================================
+
+router.get('/:id/edit', function(req, res){
+    Attraction.findById(req.params.id, function(err, foundAttraction){
+        Area.find({}, function(err, allAreas){
+            console.log(allAreas);
+            Area.findOne({'attraction._id':req.params.id}, function(err, foundAttractionArea){
+                res.render('attractions/edit.ejs', {
+                    attraction: foundAttraction,
+                    areas: allAreas,
+                    attractionArea: foundAttractionArea
+                });
+            });
+        });
+    });
+});
+
+
+router.put('/:id', function(req, res){
+    Attraction.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, updatedAttraction){
+        Area.findOne({ 'attractions._id' : req.params.id }, function(err, foundArea){
+            if(foundArea._id !== req.body.areaId){
+                foundArea.attractions.id(req.params.id).remove();
+                foundArea.save(function(err, savedFoundArea){
+                    Area.findById(req.body.areaId, function(err, newArea){
+                        newArea.attractions.push(updatedAttraction);
+                        newArea.save(function(err, savedNewArea){
+                            res.redirect('/attractions/'+req.params.id);
+                        });
+                    });
+                });
+            } else {
+                foundArea.attractions.id(req.params.id).remove();
+                foundArea.attractions.push(updatedAttraction);
+                foundArea.save(function(err, data){
+                    res.redirect('/attractions/'+req.params.id);
+                });
+            }
+        });
+    });
+});
 
 //============================================================================
 module.exports = router;
