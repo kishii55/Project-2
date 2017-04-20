@@ -10,14 +10,20 @@ router.get('/new', function(req, res){
 
 router.post('/', function(req, res){
     User.findOne({ username: req.body.username }, function(err, foundUser){
-        if( bcrypt.compareSync(req.body.password, foundUser.password) ){
+        if (!foundUser){
+          res.render('sessions/incorrect.ejs');
+        }
+        else if (foundUser){
+          if (bcrypt.compareSync(req.body.password, foundUser.password)){
             req.session.currentuser = foundUser;
             res.redirect('/');
-        } else {
-            res.send('Incorrect Password Please Try Again');
+          } else {
+            // res.send('wrong username or password');
+            res.render('sessions/incorrect.ejs');
+          }
         }
+      });
     });
-});
 
 //DELETE ROUTE ===========================================================
 router.delete('/', function(req, res){

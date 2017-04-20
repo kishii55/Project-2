@@ -1,8 +1,7 @@
-body{
-    background: red;
+body {
+    margin-top: 70px;
 }
 
-/*
 .white-pink {
 margin-left:auto;
 margin-right:auto;
@@ -42,7 +41,7 @@ padding-right: 10px;
 margin-top: 10px;
 color: #969696;
 }
-.white-pink input[type="text"], .white-pink input[type="email"], .white-pink textarea,.white-pink select{
+.white-pink input[type="text"], .white-pink input[type="email"], .white-pink input[type="password"], .white-pink textarea,.white-pink select{
 color: #555;
 width: 70%;
 padding: 3px 0px 3px 5px;
@@ -108,4 +107,4 @@ text-overflow: '';
 width: 70%;
 line-height: 15px;
 height: 30px;
-}*/
+}

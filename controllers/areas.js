@@ -2,17 +2,24 @@ var express = require('express');
 var Area = require('../models/areas.js');
 var Attraction = require('../models/attractions.js');
 var router = express.Router();
+var bcrypt = require('bcrypt');
+
 //========================================================================
 
 //INDEX ROUTE=============================================================
 
 //SHOW INDEX PAGE
 router.get('/', function(req, res){
+	if(req.session.currentuser){
 	Area.find({}, function(err, foundAreas){
 		res.render('areas/index.ejs', {
-			areas: foundAreas
-		});
-	})
+			areas: foundAreas,
+			currentUser: req.session.currentUser
+			});
+		})
+	} else {
+		res.render("sessions/pleaselogin.ejs");
+	}
 });
 
 //CREATE~NEW ROUTE=========================================================

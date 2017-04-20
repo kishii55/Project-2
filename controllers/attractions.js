@@ -2,16 +2,22 @@ var express = require('express');
 var router = express.Router();
 var Attraction = require('../models/attractions.js');
 var Area = require('../models/areas.js')
+var bcrypt = require('bcrypt');
 
 //=========================================================================
 
 //INDEX ROUTE
 router.get('/', function(req, res){
-	Attraction.find({}, function(err, foundAttractions){
-		res.render('attractions/index.ejs', {
-			attractions: foundAttractions
+	if(req.session.currentuser){
+		Attraction.find({}, function(err, foundAttractions){
+			res.render('attractions/index.ejs', {
+				attractions: foundAttractions,
+				currentUser: req.session.currentUser
+			});
 		});
-	})
+	} else {
+		res.render("sessions/pleaselogin.ejs");
+	}
 });
 
 

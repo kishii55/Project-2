@@ -6,14 +6,6 @@
 	</head>
 	<body>
 		<header>
-			<h1>
-    			<% if(currentUser) { %>
-        		<%=currentUser.username%> Lets Explore Disneyland!
-    			<% } else { %>
-        		Welcome to Disneyland!
-    			<% } %>
-			</h1>
-
 			<nav>
 				<ul>
 					<li>
@@ -33,6 +25,28 @@
 					<% } %>
 				</ul>
 			</nav>
+
+			<h1>
+				<% if(currentUser) { %>
+				<%=currentUser.username%> Lets Explore Disneyland!
+				<% } else { %>
+				Welcome to Disneyland!
+				<% } %>
+			</h1>
 		</header>
+
+
+		<main id="park">
+			<div id="box1" class="empty">Click To Create New Area</div>
+			<div id="box2" class="empty">Click To Create New Area</div>
+			<div id="box3" class="empty">Click To Create New Area</div>
+			<div id="box4" class="empty">Click To Create New Area</div>
+			<div id="box5" class="empty">Click To Create New Area</div>
+			<div id="box6" class="empty">Click To Create New Area</div>
+			<div id="box7" class="empty">Click To Create New Area</div>
+			<div id="box8" class="empty">Click To Create New Area</div>
+			<div id="box9" class="empty">Click To Create New Area</div>
+		</main>
+
 	</body>
 </html>
