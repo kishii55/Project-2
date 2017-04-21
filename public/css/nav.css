@@ -36,7 +36,7 @@ header {
     border-bottom-left-radius: 5px;
 }
 
-#crouton li:last-child a {
+#nav li:last-child a {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
