@@ -19,7 +19,7 @@
 		</header>
 
 		<main>
-			<form action="/areas" method="post" class="white-pink">
+			<form action="/areas/<%=area._id%>?_method=PUT" method="post" class="white-pink">
 				<h1>Edit <%=area.name%>'s Name</h1>
 				<label>
 					<span>Edit Area Name</span>
@@ -27,7 +27,7 @@
 				</label>
 				<label>
 					<span>&nbsp;</span>
-					<input type="submit" name="" value="Edit" class="button">
+					<input type="submit" name="" value="Edit">
 				</label>
 			</form>
 		</main>
