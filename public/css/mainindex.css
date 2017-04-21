@@ -1,11 +1,10 @@
 #park {
     width: 100%;
-    height: 750px;
-    margin-left: 90px;
+    height: 580px;
     background-image: url("/images/park_layout.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
-    border: 10px solid pink;
+    background-size: cover;
+    border: none;
     }
 
 .empty {
@@ -21,7 +20,7 @@
 #box1 {
     margin-left: 502px;
     margin-top: 70px;
-    position: sticky;
+
 }
 
 #box2 {

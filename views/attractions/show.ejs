@@ -3,22 +3,27 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link rel="stylesheet" href="/css/nav.css">
 	</head>
 	<body>
+
 		<header>
+		  <div id="nav">
+		    <ul>
+		        <li><a href="/">Home</a></li>
+		        <li><a href="/areas">Areas</a></li>
+		        <li><a href="/attractions">Attractions</a></li>
+		    </ul>
+		  </div>
+		</header>
+
+
+
+
+
 			<h1><%=attraction.theme%></h1>
 			<small>Located in: <a href="/areas/<%=area._id%>"><%=area.name%></a></small>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/attractions">Attractions Index</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+
 		<main>
 			<section>
 				<h2>Your Disney Friends Found Here</h2>

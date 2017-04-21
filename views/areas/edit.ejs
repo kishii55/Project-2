@@ -4,24 +4,23 @@
 		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="/css/forms.css">
+		<link rel="stylesheet" href="/css/nav.css">
 	</head>
 	<body>
+
 		<header>
-			<h1>Edit <%=area.name%>'s Info</h1>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/areas">Areas Index</a>
-					</li>
-				</ul>
-			</nav>
+		  <div id="nav">
+		    <ul>
+		        <li><a href="/">Home</a></li>
+		        <li><a href="/areas">Areas</a></li>
+		        <li><a href="/attractions">Attractions</a></li>
+		    </ul>
+		  </div>
 		</header>
+
 		<main>
 			<form action="/areas" method="post" class="white-pink">
-				<h1>Edit Area Visited</h1>
+				<h1>Edit <%=area.name%>'s Name</h1>
 				<label>
 					<span>Edit Area Name</span>
 					<input type="text" placeholder="Area Name" name="name" />

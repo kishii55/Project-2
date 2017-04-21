@@ -3,21 +3,23 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link rel="stylesheet" href="/css/nav.css">
 	</head>
 	<body>
+
 		<header>
-			<h1>Show Page for <%=area.name%></h1>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/areas">Area Index</a>
-					</li>
-				</ul>
-			</nav>
+		  <div id="nav">
+		    <ul>
+		        <li><a href="/">Home</a></li>
+		        <li><a href="/areas">Areas</a></li>
+		        <li><a href="/attractions">Attractions</a></li>
+		    </ul>
+		  </div>
 		</header>
+
+
+			<h1>Show Page for <%=area.name%></h1>
+
 		<main>
 			<section>
 				<h2>Current Area</h2>
