@@ -17,18 +17,15 @@
 		  </div>
 		</header>
 
-
-			<h1>Show Page for <%=area.name%></h1>
-
 		<main>
 			<section>
-				<h2>Current Area</h2>
+				<h1>Current Area</h1>
 				<ul>
 					<li>Name: <%=area.name%></li>
 				</ul>
 			</section>
 			<section>
-				<h2>Attractions Wihtin This Area</h2>
+				<h2>Attractions Within this Area</h2>
 				<ul>
 					<% for(var i = 0; i < area.attractions.length; i++){ %>
 						<li><a href="/attractions/<%=area.attractions[i]._id%>"><%=area.attractions[i].theme%></a></li>
