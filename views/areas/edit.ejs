@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="/css/forms.css">
 	</head>
 	<body>
 		<header>
@@ -19,10 +20,16 @@
 			</nav>
 		</header>
 		<main>
-			<h2>Area Attributes:</h2>
-			<form action="/areas/<%=area._id%>?_method=PUT" method="post">
-				<input type="text" name="name" value="<%=area.name%>"/><br/>
-				<input type="submit" value="Update Area"/>
+			<form action="/areas" method="post" class="white-pink">
+				<h1>Edit Area Visited</h1>
+				<label>
+					<span>Edit Area Name</span>
+					<input type="text" placeholder="Area Name" name="name" />
+				</label>
+				<label>
+					<span>&nbsp;</span>
+					<input type="submit" name="" value="Edit" class="button">
+				</label>
 			</form>
 		</main>
 	</body>

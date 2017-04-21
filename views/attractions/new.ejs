@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="/css/forms.css">
 	</head>
 	<body>
 		<header>
-			<h1>Create an Attraction</h1>
 			<nav>
 				<ul>
 					<li>
@@ -19,17 +19,32 @@
 			</nav>
 		</header>
 		<main>
-			<form action="/attractions" method="post">
-				Choose Affiliated Area
+			<form action="/attractions" method="post" class="white-pink">
+				<h1>Create an Attraction</h1>
+				<label>
+					<span>Choose Affiliated Area</span>
+				</label>
 				<select name="areaId">
                     <% for(var i = 0; i < areas.length; i++) { %>
                         <option value="<%=areas[i]._id%>"><%=areas[i].name%></option>
                     <% } %>
                 </select><br/>
-				<input type="text" placeholder="Attraction Theme" name="theme" /><br/>
-				<textarea name="characters" placeholder="Which Disney friends did you meet here?"></textarea><br/>
-				<textarea name="description" placeholder="Description of your magical experiences"></textarea><br/>
-				<input type="submit" value="Create Attraction"/>
+				<label>
+					<span>Attraction Name</span>
+					<input type="text" placeholder="Attraction Theme" name="theme" /><br/>
+				</label>
+				<label>
+					<span>Who did you meet?</span>
+					<textarea name="characters" placeholder="Which Disney friends did you meet here?"></textarea><br/>
+				</label>
+				<label>
+					<span>Log Memories</span>
+					<textarea name="description" placeholder="Description of your magical experiences"></textarea><br/>
+				</label>
+				<label>
+					<span>&nbsp;</span>
+					<input type="submit" class="button" value="Create"/>
+				</label>
 			</form>
 		</main>
 	</body>

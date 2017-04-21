@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="/areas">areas</a>
-					</li>
-					<li>
-						<a href="/attractions">attractions</a>
-					</li>
-					<li><a href="/sessions/new">Log In</a></li>
-					<li><a href="/users/new">Register</a></li>
-					<% if(currentUser) { %>
-    					<li>
-        					<form action="/sessions?_method=DELETE" method="POST">
-            					<input type="submit" value="Logout"/>
-        					</form>
-    					</li>
-					<% } %>
-				</ul>
-			</nav>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/mainindex.css">
+    <link rel="stylesheet" type="text/css" href="/css/forms.css">
+</head>
+<body>
 
-			<h1>
-				<% if(currentUser) { %>
-				<%=currentUser.username%> Lets Explore Disneyland!
-				<% } else { %>
-				Welcome to Disneyland!
-				<% } %>
-			</h1>
-		</header>
+    <div id="wrapper">
+
+        <div id="header">
+
+        </div>
 
 
-		<main id="park">
-			<div id="box1" class="empty">Click To Create New Area</div>
-			<div id="box2" class="empty">Click To Create New Area</div>
-			<div id="box3" class="empty">Click To Create New Area</div>
-			<div id="box4" class="empty">Click To Create New Area</div>
-			<div id="box5" class="empty">Click To Create New Area</div>
-			<div id="box6" class="empty">Click To Create New Area</div>
-			<div id="box7" class="empty">Click To Create New Area</div>
-			<div id="box8" class="empty">Click To Create New Area</div>
-			<div id="box9" class="empty">Click To Create New Area</div>
-		</main>
+        <main id="content">
+            <div id="menu8">
+                <ul>
+                    <li><a href="/areas">Areas Visited</a></li>
+                    <li><a href="/attractions">Attractions Visited</a></li>
+                    <li><a href="/sessions/new">Log-In</a></li>
+                    <li><a href="/users/new">Register</a></li>
+                        <% if(currentUser) { %>
+                        <li>
+                            <form action="/sessions?_method=DELETE" method="POST">
+                            <label>
+                                <span>&nbsp;</span>
+                                <input type="submit" class="button" value="Logout"/>
+                            </label>
+                            </form>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
 
-	</body>
+                <% if(currentUser) { %>
+                <main id="park">
+                    <div id="box1" class="empty">Click To Create New Area</div>
+                    <div id="box2" class="empty">Click To Create New Area</div>
+                    <div id="box3" class="empty">Click To Create New Area</div>
+                    <div id="box4" class="empty">Click To Create New Area</div>
+                    <div id="box5" class="empty">Click To Create New Area</div>
+                    <div id="box6" class="empty">Click To Create New Area</div>
+                    <div id="box7" class="empty">Click To Create New Area</div>
+                    <div id="box8" class="empty">Click To Create New Area</div>
+                    <div id="box9" class="empty">Click To Create New Area</div>
+                </main>
+                <% } %>
+       </main>
+
+
+        <div id="footer">
+            <p>All Things Disney Click <a href="http://www.disney.com/">Here</a></p>
+        </div>
+
+    </div>
+
+</body>
+
 </html>

@@ -36,6 +36,8 @@ app.get('/', function(req, res){
     });
 });
 
+//==========================================================================
+
 
 //CONNECT TO SERVER AND MONGOOSE=============================================
 mongoose.connect(mongoDBURI);

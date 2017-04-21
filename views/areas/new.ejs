@@ -3,10 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="/css/forms.css">
 	</head>
 	<body>
 		<header>
-			<h1>Create an Area</h1>
+
 			<nav>
 				<ul>
 					<li>
@@ -19,9 +20,16 @@
 			</nav>
 		</header>
 		<main>
-			<form action="/areas" method="post">
-				<input type="text" placeholder="Area Name" name="name" />
-				<input type="submit" name="" value="Create New Area">
+			<form action="/areas" method="post" class="white-pink">
+				<h1>Create an Area</h1>
+				<label>
+					<span>Create New Area Visited</span>
+					<input type="text" placeholder="Area Name" name="name" />
+				</label>
+				<label>
+					<span>&nbsp;</span>
+					<input type="submit" name="" value="Create" class="button">
+				</label>
 			</form>
 		</main>
 	</body>

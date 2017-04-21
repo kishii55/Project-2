@@ -1,6 +1,7 @@
 #park {
     width: 100%;
-    height: 1100px;
+    height: 750px;
+    margin-left: 90px;
     background-image: url("/images/park_layout.jpg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -8,11 +9,57 @@
     }
 
 .empty {
-    width: 200px;
-    height: 30px;
+    width: 180px;
+    height: 20px;
     color: white;
     text-align: center;
     background-color: black;
     border: 1px solid black;
     z-index: 10;
+}
+
+#box1 {
+    margin-left: 502px;
+    margin-top: 70px;
+    position: sticky;
+}
+
+#box2 {
+    margin-left: 470px;
+    margin-top: 153px;
+}
+
+#box3 {
+    margin-left:1px;
+    margin-bottom:px;
+}
+
+#box4 {
+    margin-left:1px;
+    margin-bottom:px;
+}
+
+#box5 {
+    margin-left:1px;
+    margin-top:1px;
+}
+
+#box6 {
+    margin-left:1px;
+    margin-top:1px;
+}
+
+#box7 {
+    margin-left:1px;
+    margin-top:1px;
+}
+
+#box8 {
+    margin-left:1px;
+    margin-top:1px;
+}
+
+#box9 {
+    margin-left:1px;
+    margin-top:1px;
 }
